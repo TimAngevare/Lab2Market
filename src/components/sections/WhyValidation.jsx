@@ -27,7 +27,7 @@ const WhyValidation = () => {
   ];
 
   const benefits = [
-    'Identify genuine market opportunities before significant R&D investment',
+    'Identify validated market opportunities before significant R&D investment',
     'Connect with potential industry partners and pilot customers who can accelerate validation',
     'Map the commercialization pathway from current TRL to market-ready solutions',
     'Strengthen funding applications with evidence-based market analysis that addresses investor concerns',

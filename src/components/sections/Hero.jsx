@@ -35,13 +35,25 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-primary-700 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-primary-700 mb-6 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Student-powered market validation for Twente's academic innovations
             </motion.p>
+
+            {/* Slogan Banner */}
+            <motion.div
+              className="bg-gradient-primary text-white px-6 py-4 rounded-lg mb-8 border-l-4 border-primary-100"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <p className="text-lg md:text-xl font-semibold italic">
+                We do commercialization so you can focus on what is important: technical research.
+              </p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

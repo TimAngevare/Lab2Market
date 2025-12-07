@@ -16,7 +16,7 @@ const Difference = () => {
 
   const lab2market = [
     { icon: <FaCheckCircle />, text: 'Affordable pricing that fits research budgets', negative: false },
-    { icon: <FaCheckCircle />, text: '4-8 weeks rapid validation', negative: false },
+    { icon: <FaCheckCircle />, text: '12-14 weeks rapid validation', negative: false },
     { icon: <FaCheckCircle />, text: 'Technical students who understand your science', negative: false },
     { icon: <FaCheckCircle />, text: 'Trained in customer development methodology', negative: false },
     { icon: <FaCheckCircle />, text: 'Embedded in Twente\'s innovation ecosystem', negative: false }
