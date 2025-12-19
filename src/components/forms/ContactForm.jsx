@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const form = useRef();
 
   const {
     register,
@@ -14,28 +16,30 @@ const ContactForm = () => {
     reset
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      // TODO: Replace with actual EmailJS or Web3Forms implementation
-      // For now, we'll simulate a submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+    emailjs
+      .sendForm('service_qktxqs8', 'template_rq4fuo8', form.current, {
+        publicKey: '8OXEv7ui-BaczjD7f'
+      })
+      .then(
+        () => {
+          setSubmitStatus('success');
+          reset();
+        },
+        (error) => {
+          console.error('Error submitting form:', error);
+          setSubmitStatus('error');
+        },
+      );
 
-      console.log('Form data:', data);
-      setSubmitStatus('success');
-      reset();
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSubmitting(false);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} ref={form} className="space-y-6">
       {/* Name */}
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
@@ -46,7 +50,7 @@ const ContactForm = () => {
           type="text"
           id="name"
           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-transparent transition"
-          placeholder="Your full name"
+          placeholder="Your name"
         />
         {errors.name && (
           <p className="mt-1 text-sm text-red-300">{errors.name.message}</p>
@@ -100,7 +104,7 @@ const ContactForm = () => {
           type="text"
           id="researchArea"
           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-transparent transition"
-          placeholder="e.g., Biotech, Materials Science, AI/ML"
+          placeholder="e.g., Medtech, Photonic integrated circuits, Quantum, AI/ML"
         />
       </div>
 

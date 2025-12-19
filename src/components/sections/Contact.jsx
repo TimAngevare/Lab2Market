@@ -54,7 +54,7 @@ const Contact = () => {
           >
             {/* Founders Section */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold mb-6">Meet the Founders</h3>
+              <h3 className="text-2xl font-bold mb-6">Meet the Team</h3>
 
               <div className="space-y-6">
                 {/* Tim Angevare */}
@@ -81,6 +81,19 @@ const Contact = () => {
                     <p className="text-primary-50 text-sm">Co-Founder</p>
                     <p className="text-primary-100 text-sm mt-1">
                       International Business Administration Student
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl font-bold text-white"></span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold">Lennart de Vreede</h4>
+                    <p className="text-primary-50 text-sm">Advisor</p>
+                    <p className="text-primary-100 text-sm mt-1">
+                      Impact Developer Photonics University of Twente
                     </p>
                   </div>
                 </div>
