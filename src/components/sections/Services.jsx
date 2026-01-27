@@ -34,19 +34,25 @@ const Services = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   };
 
   return (
-    <section id="services" className="section-padding bg-primary-50/30">
-      <div className="container-custom">
+    <section id="services" className="section-padding bg-gradient-to-b from-primary-50/40 to-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-100/30 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -54,10 +60,24 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          {/* Section badge */}
+          <motion.span
+            className="inline-block bg-primary-500/10 text-primary-500 px-4 py-2 rounded-full text-sm font-semibold mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            Our Services
+          </motion.span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
             How We De-Risk Your Innovation
           </h2>
-          <p className="text-xl text-primary-700 max-w-3xl mx-auto">
+
+          {/* Decorative line */}
+          <div className="section-divider mb-6"></div>
+
+          <p className="text-xl text-primary-700/80 max-w-3xl mx-auto leading-relaxed">
             Three essential services to validate your deep tech research before significant investment
           </p>
         </motion.div>

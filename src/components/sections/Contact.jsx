@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaEnvelope, FaMapMarkerAlt, FaLinkedin } from 'react-icons/fa';
 import ContactForm from '../forms/ContactForm';
+import TimImage from '../../assets/images/Tim.jpg';
+import KenImage from '../../assets/images/Ken.jpg';
+import LennartImage from '../../assets/images/Lennart.png';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -59,9 +62,11 @@ const Contact = () => {
               <div className="space-y-6">
                 {/* Tim Angevare */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl font-bold text-white">TA</span>
-                  </div>
+                  <img
+                    src={TimImage}
+                    alt="Tim Angevare"
+                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                  />
                   <div>
                     <h4 className="text-xl font-semibold">Tim Angevare</h4>
                     <p className="text-primary-50 text-sm">Co-Founder</p>
@@ -73,9 +78,11 @@ const Contact = () => {
 
                 {/* Kentaro Nagai */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl font-bold text-white">KN</span>
-                  </div>
+                  <img
+                    src={KenImage}
+                    alt="Kentaro Nagai"
+                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                  />
                   <div>
                     <h4 className="text-xl font-semibold">Kentaro Nagai</h4>
                     <p className="text-primary-50 text-sm">Co-Founder</p>
@@ -85,10 +92,13 @@ const Contact = () => {
                   </div>
                 </div>
 
+                {/* Lennart de Vreede */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl font-bold text-white"></span>
-                  </div>
+                  <img
+                    src={LennartImage}
+                    alt="Lennart de Vreede"
+                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                  />
                   <div>
                     <h4 className="text-xl font-semibold">Lennart de Vreede</h4>
                     <p className="text-primary-50 text-sm">Advisor</p>

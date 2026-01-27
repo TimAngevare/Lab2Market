@@ -14,10 +14,7 @@ function App() {
       <Hero />
       <Services />
       <WhyValidation />
-      <Difference />
-      <VisionMission />
       <Process />
-      <Testimonials />
       <Contact />
     </Layout>
   );
