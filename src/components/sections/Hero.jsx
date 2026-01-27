@@ -11,7 +11,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-primary-50/30 to-primary-100/20 relative overflow-hidden">
+    <section id="hero" className="min-h-screen pb-16 flex items-center justify-center bg-gradient-to-br from-white via-primary-50/30 to-primary-100/20 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient orbs */}
@@ -25,7 +25,7 @@ const Hero = () => {
         }}></div>
       </div>
 
-      <div className="container-custom relative z-10 pt-20">
+      <div className="container-custom relative z-10 pt-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <motion.div
